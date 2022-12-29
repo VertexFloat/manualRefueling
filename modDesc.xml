@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="67">
+    <author>VertexFloat</author>
+    <version>1.0.0.1</version>
+    <title>
+        <en>Manual Refueling</en>
+        <de>Manuelle Betankung</de>
+        <pl>Ręczne Tankowanie</pl>
+    </title>
+    <iconFilename>icon.png</iconFilename>
+    <multiplayer supported="true"/>
+
+    <description>
+<en>
+<![CDATA[Thanks to this modification you can refuel your machine only when you are outside and near to it.
+It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully loaded.
+
+Changelog (1.0.0.1) :
+- improved and more clearly code
+- descVersion updated
+- fixed refilling from some placeables
+]]>
+</en>
+<de>
+<![CDATA[Dank dieser Modifikation können Sie Ihre Maschine nur dann betanken, wenn Sie sich außerhalb und in der Nähe des Fahrzeugs befinden.
+Es beseitigt auch den ursprünglichen Fehler, wenn die Nachfüllaktion immer noch angezeigt wird, selbst wenn Ihr Quelltank leer ist oder die Maschine/das Fahrzeug, welches Sie befüllen, voll beladen ist.
+
+Änderungsprotokoll (1.0.0.1) :
+- verbesserter und übersichtlicherer Code
+- descVersion aktualisiert
+- Nachfüllen von einigen Placeables behoben
+]]>
+</de>
+<pl>
+<![CDATA[Dzięki tej modyfikacji możesz tankować swoją maszynę tylko będąc na zewnątrz i w jej pobliżu.
+Usuwa również oryginalny błąd, gdy akcja uzupełniania jest nadal wyświetlana, nawet gdy zbiornik źródłowy jest pusty lub napełniana maszyna/pojazd jest w pełni załadowana.
+
+Dziennik zmian (1.0.0.1) :
+- ulepszony i bardziej przejrzysty kod
+- zaktualizowano descVersion
+- naprawiono napełnianie z różnych obiektów
+]]>
+</pl>
+    </description>
+
+    <extraSourceFiles>
+        <sourceFile filename="src/misc/ManualRefueling.lua"/>
+    </extraSourceFiles>
+</modDesc>
