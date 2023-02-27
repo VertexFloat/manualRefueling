@@ -1,16 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="67">
-    <author>VertexFloat</author>
-    <version>1.0.0.1</version>
-    <title>
-        <en>Manual Refueling</en>
-        <de>Manuelle Betankung</de>
-        <pl>Ręczne Tankowanie</pl>
-    </title>
-    <iconFilename>icon.png</iconFilename>
-    <multiplayer supported="true"/>
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<modDesc descVersion='72'>
+	<author>VertexFloat</author>
+	<version>1.0.0.2</version>
+	<title>
+		<en>Manual Refueling</en>
+		<de>Manuelle Betankung</de>
+		<pl>Manualne Tankowanie</pl>
+	</title>
+	<iconFilename>icon.png</iconFilename>
+	<multiplayer supported='true'/>
 
-    <description>
+	<description>
 <en>
 <![CDATA[Thanks to this modification you can refuel your machine only when you are outside and near to it.
 It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully loaded.
@@ -19,6 +19,16 @@ Changelog (1.0.0.1) :
 - improved and more clearly code
 - descVersion updated
 - fixed refilling from some placeables
+
+Changelog (1.0.0.2) :
+- added sounds for starting/stopping refueling
+- removed unnecessary functionality (refueling no more stops when player leave trigger or enter vehicle)
+- cleaned and improved code
+- descVersion updated
+- new game screenshots
+- new mod icon
+
+For more information, help, and report issues please visit <a href='https://github.com/4c65736975/manualRefueling'>GitHub</a>.
 ]]>
 </en>
 <de>
@@ -29,6 +39,16 @@ Es beseitigt auch den ursprünglichen Fehler, wenn die Nachfüllaktion immer noc
 - verbesserter und übersichtlicherer Code
 - descVersion aktualisiert
 - Nachfüllen von einigen Placeables behoben
+
+Änderungsprotokoll (1.0.0.2) :
+- Sounds zum Starten/Stoppen des Tankens hinzugefügt
+- Unnötige Funktionalität entfernt (das Tanken stoppt nicht mehr, wenn der Spieler den Auslöser verlässt oder in das Fahrzeug einsteigt)
+- gesäuberter und verbesserter Code
+- descVersion aktualisiert
+- neue Spiel-Screenshots
+- Neues Mod-Symbol
+
+Weitere Informationen, Hilfe und Probleme melden finden Sie unter <a href='https://github.com/4c65736975/manualRefueling'>GitHub</a>.
 ]]>
 </de>
 <pl>
@@ -39,11 +59,21 @@ Dziennik zmian (1.0.0.1) :
 - ulepszony i bardziej przejrzysty kod
 - zaktualizowano descVersion
 - naprawiono napełnianie z różnych obiektów
+
+Dziennik zmian (1.0.0.2) :
+- dodano dźwięki rozpoczynania/kończenia tankowania
+- usunięto niepotrzebną funkcjonalność (tankowanie nie zatrzymuje się, gdy gracz opuszcza trigger lub wchodzi do pojazdu)
+- oczyszczony i poprawiony kod
+- aktualizacja descVersion
+- nowe zrzuty ekranu z gry
+- nowa ikona moda
+
+Po więcej informacji, pomoc lub zgłoszenie błędu, odwiedź stronę <a href='https://github.com/4c65736975/manualRefueling'>GitHub</a>.
 ]]>
 </pl>
-    </description>
+	</description>
 
-    <extraSourceFiles>
-        <sourceFile filename="src/misc/ManualRefueling.lua"/>
-    </extraSourceFiles>
+	<extraSourceFiles>
+		<sourceFile filename='src/ManualRefueling.lua'/>
+	</extraSourceFiles>
 </modDesc>
