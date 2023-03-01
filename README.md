@@ -47,7 +47,8 @@
 
 <img src='screenshots/screenShot (1).png' alt='screenshot'>
 
-Thanks to this simple modification, the implements remains on the ground when attached.
+Thanks to this modification you can refuel your machine only when you are outside and near to it.
+It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully loaded.
 
 <p align="right">&#x2191 <a href="#top">back to top</a></p>
 
