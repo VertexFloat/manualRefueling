@@ -54,7 +54,7 @@ It also remove original bug when refill action is still showing even when your s
 
 ## Getting started
 
-If you want to install latest official version, you can [download](https://www.farming-simulator.com/mod.php?lang=pl&country=pl&mod_id=247549&title=fs2022) it like other mods.
+If you want to install latest official version, you can [download](https://www.farming-simulator.com/mod.php?mod_id=247549&title=fs2022) it like other mods.
 <br/>
 
 ### Prerequisites
