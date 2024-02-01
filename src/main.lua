@@ -144,6 +144,20 @@ local function getIsSourceEmpty(loadTrigger)
   return true
 end
 
+local function getCanAccessObject(object)
+  if object ~= nil then
+    local ownerId = object:getOwnerFarmId()
+    local farmId = g_currentMission:getFarmId()
+    local conductor = AccessHandler:canFarmAccessOtherId(farmId, ownerId)
+
+    if ownerId == farmId or conductor then
+      return true
+    end
+  end
+
+  return false
+end
+
 local function getAllowsActivation(self, superFunc, fillableObject)
   if getIsSourceEmpty(self) then
     return false
@@ -162,7 +176,7 @@ local function getAllowsActivation(self, superFunc, fillableObject)
   end
 
   if self.isManual then
-    return true
+    return getCanAccessObject(fillableObject)
   end
 
   return superFunc(self, fillableObject)
@@ -359,7 +373,7 @@ local function getIsActivatable(self, superFunc)
       local spec = self.vehicle.spec_fillUnit
 
       for _, trigger in ipairs(spec.fillTrigger.triggers) do
-        if trigger.isManual and trigger:getIsActivatable(self.vehicle) then
+        if trigger.isManual and getCanAccessObject(self.vehicle) and trigger:getIsActivatable(self.vehicle) then
           self:updateActivateText(spec.fillTrigger.isFilling)
 
           if not spec.fillTrigger.isFilling then
