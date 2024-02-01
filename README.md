@@ -50,7 +50,7 @@
 <img src="screenshots/screenShot (1).png" alt="screenshot">
 
 Thanks to this modification, you can manually refuel your machine while being outdoors and close to it.
-It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully loaded.
+It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully filled.
 
 <p align="right">&#x2191 <a href="#top">back to top</a></p>
 
