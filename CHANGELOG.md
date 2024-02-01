@@ -4,9 +4,11 @@
 
 Features:
 
-- optimized and cleaned code
 - added support for manual refueling from objects such as barrels and pallets
 - added DEF fill type support
+- optimized and cleaned code
+- new game screenshots
+- updated descVersion
 
 ## 1.0.0.2
 
