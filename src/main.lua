@@ -120,6 +120,14 @@ end
 
 LoadTrigger.stopLoading = Utils.prependedFunction(LoadTrigger.stopLoading, stopLoading)
 
+local function getIsObjectFilled(object, fillUnitIndex)
+  if object ~= nil and object.getFillUnitFreeCapacity ~= nil and fillUnitIndex ~= nil then
+    return not (object:getFillUnitFreeCapacity(fillUnitIndex) > 0)
+  end
+
+  return false
+end
+
 local function getIsSourceEmpty(loadTrigger)
   if loadTrigger.hasInfiniteCapacity then
     return false
@@ -138,6 +146,18 @@ end
 
 local function getAllowsActivation(self, superFunc, fillableObject)
   if getIsSourceEmpty(self) then
+    return false
+  end
+
+  local fillUnitIndex = nil
+
+  for _, object in pairs(self.fillableObjects) do
+    if object.object == fillableObject then
+      fillUnitIndex = object.fillUnitIndex
+    end
+  end
+
+  if getIsObjectFilled(fillableObject, fillUnitIndex) then
     return false
   end
 
@@ -167,13 +187,11 @@ local function getIsFillableObjectAvailable(self, superFunc)
         local nearestDistance = math.huge
 
         for _, fillableObject in pairs(self.fillableObjects) do
-          if fillableObject.object:getFillUnitFreeCapacity(fillableObject.fillUnitIndex) > 0 then
-            local objectDistance = calcDistanceFrom(fillableObject.object.rootNode, g_currentMission.player.rootNode)
+          local objectDistance = calcDistanceFrom(fillableObject.object.rootNode, g_currentMission.player.rootNode)
 
-            if objectDistance < nearestDistance and objectDistance <= INTERACTION_RADIUS then
-              nearestDistance = objectDistance
-              nearestObject = fillableObject
-            end
+          if objectDistance < nearestDistance and objectDistance <= INTERACTION_RADIUS then
+            nearestDistance = objectDistance
+            nearestObject = fillableObject
           end
         end
 
@@ -238,10 +256,15 @@ local function fillTriggerCallback(self, triggerId, otherId, onEnter, onLeave, o
 
     if vehicle ~= nil and vehicle.addFillUnitTrigger ~= nil and vehicle.removeFillUnitTrigger ~= nil and vehicle ~= self and vehicle ~= self.sourceObject then
       if onEnter or onStay then
-        self.vehiclesInTrigger[otherId] = {
-          object = vehicle,
-          distance = math.huge
-        }
+        local fillType = self:getCurrentFillType()
+        local fillUnitIndex = vehicle:getFirstValidFillUnitToFill(fillType)
+
+        if fillUnitIndex ~= nil then
+          self.vehiclesInTrigger[otherId] = {
+            object = vehicle,
+            distance = math.huge
+          }
+        end
       else
         self.vehiclesInTrigger[otherId] = nil
       end
@@ -268,11 +291,13 @@ local function getIsActivatable(self, superFunc, vehicle)
       local nearestDistance = math.huge
 
       for _, vehicle in pairs(self.vehiclesInTrigger) do
-        vehicle.distance = calcDistanceFrom(vehicle.object.rootNode, g_currentMission.player.rootNode)
+        if entityExists(vehicle.object.rootNode) then
+          vehicle.distance = calcDistanceFrom(vehicle.object.rootNode, g_currentMission.player.rootNode)
 
-        if vehicle.distance < nearestDistance and vehicle.distance <= INTERACTION_RADIUS then
-          nearestDistance = vehicle.distance
-          nearestVehicle = vehicle.object
+          if vehicle.distance < nearestDistance and vehicle.distance <= INTERACTION_RADIUS then
+            nearestDistance = vehicle.distance
+            nearestVehicle = vehicle.object
+          end
         end
       end
 
@@ -323,29 +348,28 @@ end
 FillTrigger.setFillSoundIsPlaying = Utils.overwrittenFunction(FillTrigger.setFillSoundIsPlaying, setFillSoundIsPlaying)
 
 local function getIsActivatable(self, superFunc)
-  local spec = self.vehicle.spec_fillUnit
-  local selectedTrigger = spec.fillTrigger.selectedTrigger
+  local fillUnitIndex = self.vehicle:getFirstValidFillUnitToFill(self.fillTypeIndex)
 
-  if selectedTrigger ~= nil and selectedTrigger.isManual then
-    local fillUnitIndex = self.vehicle:getFirstValidFillUnitToFill(self.fillTypeIndex)
+  if fillUnitIndex ~= nil then
+    local enoughSpace = self.vehicle:getFillUnitFillLevel(fillUnitIndex) < self.vehicle:getFillUnitCapacity(fillUnitIndex) - 1
+    local allowsFilling = self.vehicle:getFillUnitAllowsFillType(fillUnitIndex, self.fillTypeIndex)
+    local allowsToolType = self.vehicle:getFillUnitSupportsToolType(fillUnitIndex, ToolType.TRIGGER)
 
-    if fillUnitIndex ~= nil then
-      local enoughSpace = self.vehicle:getFillUnitFillLevel(fillUnitIndex) < self.vehicle:getFillUnitCapacity(fillUnitIndex) - 1
-      local allowsFilling = self.vehicle:getFillUnitAllowsFillType(fillUnitIndex, self.fillTypeIndex)
-      local allowsToolType = self.vehicle:getFillUnitSupportsToolType(fillUnitIndex, ToolType.TRIGGER)
+    if enoughSpace and allowsFilling and allowsToolType then
+      local spec = self.vehicle.spec_fillUnit
 
-      if enoughSpace and allowsFilling and allowsToolType then
-        for _, trigger in ipairs(spec.fillTrigger.triggers) do
-          if trigger:getIsActivatable(self.vehicle) then
-            self:updateActivateText(spec.fillTrigger.isFilling)
+      for _, trigger in ipairs(spec.fillTrigger.triggers) do
+        if trigger.isManual and trigger:getIsActivatable(self.vehicle) then
+          self:updateActivateText(spec.fillTrigger.isFilling)
 
-            if not spec.fillTrigger.isFilling then
-              g_currentMission:showFuelContext(self.vehicle)
-            end
-
-            return true
+          if not spec.fillTrigger.isFilling then
+            g_currentMission:showFuelContext(self.vehicle)
           end
+
+          return true
         end
+
+        return superFunc(self)
       end
     end
   end
