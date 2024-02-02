@@ -303,31 +303,8 @@ FillTrigger.fillTriggerCallback = Utils.appendedFunction(FillTrigger.fillTrigger
 local function getIsActivatable(self, superFunc, vehicle)
   local ret = superFunc(self, vehicle)
 
-  if ret and self.isManual then
-    if self.isPlayerInTrigger and next(self.vehiclesInTrigger) ~= nil then
-      local nearestVehicle = nil
-      local nearestDistance = math.huge
-
-      for _, vehicle in pairs(self.vehiclesInTrigger) do
-        -- we check whether the entity exists in case some e.g. pallet sneaked into vehiclesInTrigger
-        if entityExists(vehicle.object.rootNode) then
-          vehicle.distance = calcDistanceFrom(vehicle.object.rootNode, g_currentMission.player.rootNode)
-
-          if vehicle.distance < nearestDistance and vehicle.distance <= INTERACTION_RADIUS then
-            nearestDistance = vehicle.distance
-            nearestVehicle = vehicle.object
-          end
-        end
-      end
-
-      if nearestVehicle ~= nil and vehicle == nearestVehicle then
-        return true
-      end
-
-      return false
-    end
-
-    return false
+  if ret then
+    return getCanAccessObject(vehicle)
   end
 
   return ret
@@ -335,8 +312,6 @@ end
 
 FillTrigger.getIsActivatable = Utils.overwrittenFunction(FillTrigger.getIsActivatable, getIsActivatable)
 
--- unfortunately we have to override this function to add a delay in the fill sound,
--- to avoid the start sound and the fill sound being played equally
 local function setFillSoundIsPlaying(self, superFunc, state)
   if self.isManual and self.samples ~= nil and self.samples.start ~= nil then
     if state then
@@ -378,14 +353,39 @@ local function getIsActivatable(self, superFunc)
       local spec = self.vehicle.spec_fillUnit
 
       for _, trigger in ipairs(spec.fillTrigger.triggers) do
-        if trigger.isManual and getCanAccessObject(self.vehicle) and trigger:getIsActivatable(self.vehicle) then
-          self:updateActivateText(spec.fillTrigger.isFilling)
+        if trigger.isManual then
+          if trigger.isPlayerInTrigger and trigger:getIsActivatable(self.vehicle) then
+            if next(trigger.vehiclesInTrigger) == nil then
+              return false
+            end
 
-          if not spec.fillTrigger.isFilling then
-            g_currentMission:showFuelContext(self.vehicle)
+            local nearestVehicle = nil
+            local nearestDistance = math.huge
+
+            for _, vehicle in pairs(trigger.vehiclesInTrigger) do
+              -- we check whether the entity exists in case some e.g. pallet sneaked into vehiclesInTrigger
+              if entityExists(vehicle.object.rootNode) then
+                vehicle.distance = calcDistanceFrom(vehicle.object.rootNode, g_currentMission.player.rootNode)
+
+                if vehicle.distance < nearestDistance and vehicle.distance <= INTERACTION_RADIUS then
+                  nearestDistance = vehicle.distance
+                  nearestVehicle = vehicle.object
+                end
+              end
+            end
+
+            if nearestVehicle ~= nil and self.vehicle == nearestVehicle then
+              self:updateActivateText(spec.fillTrigger.isFilling)
+
+              if not spec.fillTrigger.isFilling then
+                g_currentMission:showFuelContext(self.vehicle)
+              end
+
+              return true
+            end
           end
 
-          return true
+          return false
         end
 
         return superFunc(self)
@@ -398,12 +398,8 @@ end
 
 FillActivatable.getIsActivatable = Utils.overwrittenFunction(FillActivatable.getIsActivatable, getIsActivatable)
 
-local function run(self)
-  local spec = self.vehicle.spec_fillUnit
-
-  if spec.fillTrigger.currentTrigger ~= nil and spec.fillTrigger.currentTrigger.isManual then
-    self.vehicle:raiseActive()
-  end
+local function setFillUnitIsFilling(self, isFilling, noEventSend)
+  self:raiseActive()
 end
 
-FillActivatable.run = Utils.appendedFunction(FillActivatable.run, run)
+FillUnit.setFillUnitIsFilling = Utils.prependedFunction(FillUnit.setFillUnitIsFilling, setFillUnitIsFilling)
