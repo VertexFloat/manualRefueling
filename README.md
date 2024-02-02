@@ -1,54 +1,56 @@
-<div id='top'></div>
+<div id="top"></div>
 <br/>
-<div align='center'>
-    <a href='https://github.com/4c65736975/manualRefueling'>
-        <img src='screenshots/icon.png' alt='Logo' width='128' height='128'>
-    </a>
-    <h3>Manual Refueling</h3>
-    <p>
-        Farming Simulator 22 Modification
-        <br />
-        <br />
-        <a href='https://github.com/4c65736975/manualRefueling/issues'>Report Bug</a>
-        ·
-        <a href='https://github.com/4c65736975/manualRefueling/issues'>Request Feature</a>
-    </p>
+<div align="center">
+  <a href="https://github.com/4c65736975/manualRefueling">
+    <img src="screenshots/icon.png" alt="Logo" width="128" height="128">
+  </a>
+  <h3>Manual Refueling</h3>
+  <p>
+    Farming Simulator 22 Modification
+    <br />
+    <br />
+    <a href="https://github.com/4c65736975/manualRefueling/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/4c65736975/manualRefueling/issues">Request Feature</a>
+    ·
+    <a href="https://github.com/4c65736975/manualRefueling/blob/main/CHANGELOG.md">Changelog</a>
+  </p>
 </div>
 <details>
-    <summary>Table of Contents</summary>
-    <ol>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
         <li>
-            <a href="#about-the-project">About The Project</a>
+          <a href="#prerequisites">Prerequisites</a>
         </li>
         <li>
-            <a href="#getting-started">Getting Started</a>
-            <ul>
-                <li>
-                    <a href="#prerequisites">Prerequisites</a>
-                </li>
-                <li>
-                    <a href="#installation">Installation</a>
-                </li>
-            </ul>
+          <a href="#installation">Installation</a>
         </li>
-        <li>
-            <a href="#usage">Usage</a>
-        </li>
-        <li>
-            <a href="#license">License</a>
-        </li>
-        <li>
-            <a href="#acknowledgments">Acknowledgments</a>
-        </li>
-    </ol>
+      </ul>
+    </li>
+    <li>
+      <a href="#usage">Usage</a>
+    </li>
+    <li>
+      <a href="#license">License</a>
+    </li>
+    <li>
+      <a href="#acknowledgments">Acknowledgments</a>
+    </li>
+  </ol>
 </details>
 
 ## About the project
 
-<img src='screenshots/screenShot (1).png' alt='screenshot'>
+<img src="screenshots/screenShot (1).png" alt="screenshot">
 
-Thanks to this modification you can refuel your machine only when you are outside and near to it.
-It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully loaded.
+Thanks to this modification, you can manually refuel your machine while being outdoors and close to it.
+It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully filled.
 
 <p align="right">&#x2191 <a href="#top">back to top</a></p>
 
@@ -85,8 +87,11 @@ or
 
 ## Usage
 
-<img src='screenshots/screenShot (2).png' alt='screenshot'>
-<img src='screenshots/screenShot (3).png' alt='screenshot'>
+<img src="screenshots/screenShot (2).png" alt="screenshot">
+<img src="screenshots/screenShot (3).png" alt="screenshot">
+<img src="screenshots/screenShot (4).png" alt="screenshot">
+<img src="screenshots/screenShot (5).png" alt="screenshot">
+<img src="screenshots/screenShot (6).png" alt="screenshot">
 
 <p align="right">&#x2191 <a href="#top">back to top</a></p>
 

@@ -1,88 +1,63 @@
-﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
-<modDesc descVersion='73'>
-	<author>VertexFloat</author>
-	<version>1.0.0.3</version>
-	<title>
-		<en>Manual Refueling</en>
-		<de>Manuelle Betankung</de>
-		<pl>Manualne Tankowanie</pl>
-	</title>
-	<iconFilename>icon.png</iconFilename>
-	<multiplayer supported='true'/>
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="79">
+  <author>VertexFloat</author>
+  <version>1.0.0.3</version>
+  <title>
+    <en>Manual Refueling</en>
+    <de>Manuelle Betankung</de>
+    <fr>Ravitaillement Manuel</fr>
+    <pl>Manualne Tankowanie</pl>
+  </title>
+  <description>
+    <en><![CDATA[Thanks to this modification, you can manually refuel your machine while being outdoors and close to it.
+It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully filled.
 
-	<description>
-<en>
-<![CDATA[Thanks to this modification you can refuel your machine only when you are outside and near to it.
-It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully loaded.
-
-Changelog (1.0.0.1) :
-- improved and more clearly code
-- descVersion updated
-- fixed refilling from some placeables
-
-Changelog (1.0.0.2) :
-- added sounds for starting/stopping refueling
-- removed unnecessary functionality (refueling no more stops when player leave trigger or enter vehicle)
-- cleaned and improved code
-- descVersion updated
+Changelog (1.0.0.3):
+- added support for manual refueling from objects such as barrels and pallets
+- added DEF fill type support
+- optimized and cleaned code
 - new game screenshots
-- new mod icon
+- updated descVersion
 
-Changelog (1.0.0.3) :
-- descVersion updated
+For more information, full changelog, help, and report issues please visit <a href="https://github.com/4c65736975/manualRefueling">GitHub</a>.]]></en>
+    <de><![CDATA[Dank dieser Modifikation können Sie Ihre Maschine manuell betanken, während Sie sich im Freien und in der Nähe befinden.
+Außerdem wird der ursprüngliche Fehler behoben, bei dem der Nachfüllvorgang auch dann noch angezeigt wird, wenn Ihr Quelltank leer ist oder die Maschine/das Fahrzeug, die/das Sie befüllen, voll ist.
 
-For more information, help, and report issues please visit <a href='https://github.com/4c65736975/manualRefueling'>GitHub</a>.
-]]>
-</en>
-<de>
-<![CDATA[Dank dieser Modifikation können Sie Ihre Maschine nur dann betanken, wenn Sie sich außerhalb und in der Nähe des Fahrzeugs befinden.
-Es beseitigt auch den ursprünglichen Fehler, wenn die Nachfüllaktion immer noch angezeigt wird, selbst wenn Ihr Quelltank leer ist oder die Maschine/das Fahrzeug, welches Sie befüllen, voll beladen ist.
-
-Änderungsprotokoll (1.0.0.1) :
-- verbesserter und übersichtlicherer Code
-- descVersion aktualisiert
-- Nachfüllen von einigen Placeables behoben
-
-Änderungsprotokoll (1.0.0.2) :
-- Sounds zum Starten/Stoppen des Tankens hinzugefügt
-- Unnötige Funktionalität entfernt (das Tanken stoppt nicht mehr, wenn der Spieler den Auslöser verlässt oder in das Fahrzeug einsteigt)
-- gesäuberter und verbesserter Code
-- descVersion aktualisiert
-- neue Spiel-Screenshots
-- Neues Mod-Symbol
-
-Änderungsprotokoll (1.0.0.3) :
+Änderungsprotokoll (1.0.0.3):
+- Unterstützung für manuelles Auftanken aus Objekten wie Fässern und Paletten hinzugefügt
+- Unterstützung für den DEF-Fülltyp hinzugefügt
+- optimierter und bereinigter Code
+- Neue Spiel-Screenshots
 - descVersion aktualisiert
 
-Weitere Informationen, Hilfe und Probleme melden finden Sie unter <a href='https://github.com/4c65736975/manualRefueling'>GitHub</a>.
-]]>
-</de>
-<pl>
-<![CDATA[Dzięki tej modyfikacji możesz tankować swoją maszynę tylko będąc na zewnątrz i w jej pobliżu.
-Usuwa również oryginalny błąd, gdy akcja uzupełniania jest nadal wyświetlana, nawet gdy zbiornik źródłowy jest pusty lub napełniana maszyna/pojazd jest w pełni załadowana.
+Weitere Informationen, ein vollständiges Änderungsprotokoll, Hilfe oder einen Fehlerbericht finden Sie auf <a href="https://github.com/4c65736975/manualRefueling">GitHub</a>.]]></de>
+    <fr><![CDATA[Grâce à cette modification, vous pourrez faire le plein manuellement de votre machine tout en étant à l'extérieur et à proximité de celle-ci.
+Il supprime également le bug d'origine lorsque l'action de remplissage est toujours affichée même lorsque votre réservoir source est vide ou que la machine/le véhicule que vous remplissez est complètement chargé.
 
-Dziennik zmian (1.0.0.1) :
-- ulepszony i bardziej przejrzysty kod
-- zaktualizowano descVersion
-- naprawiono napełnianie z różnych obiektów
+Journal des modifications (1.0.0.3):
+- prise en charge supplémentaire du ravitaillement manuel à partir d'objets tels que des barils et des palettes
+- ajout de la prise en charge du type de remplissage DEF
+- code optimisé et nettoyé
+- de nouvelles captures d'écran du jeu
+- descVersion mise à jour
 
-Dziennik zmian (1.0.0.2) :
-- dodano dźwięki rozpoczynania/kończenia tankowania
-- usunięto niepotrzebną funkcjonalność (tankowanie nie zatrzymuje się, gdy gracz opuszcza trigger lub wchodzi do pojazdu)
-- oczyszczony i poprawiony kod
-- aktualizacja descVersion
+Pour plus d'informations, un journal des modifications complet, de l'aide ou un rapport de bug, veuillez visiter <a href="https://github.com/4c65736975/manualRefueling">GitHub</a>.]]></fr>
+    <pl><![CDATA[Dzięki tej modyfikacji możesz ręcznie zatankować swoją maszynę będąc na zewnątrz i w jej pobliżu.
+Usuwa również oryginalny błąd, gdy akcja uzupełniania jest nadal pokazywana, nawet jeśli zbiornik źródłowy jest pusty lub napełniana maszyna/pojazd jest w pełni napełniona.
+
+Dziennik zmian (1.0.0.3):
+- dodano obsługę ręcznego tankowania z obiektów takich jak beczki i palety
+- dodano obsługę typu wypełnienia DEF
+- zoptymalizowany i oczyszczony kod
 - nowe zrzuty ekranu z gry
-- nowa ikona moda
-
-Dziennik zmian (1.0.0.3) :
 - zaktualizowano descVersion
 
-Po więcej informacji, pomoc lub zgłoszenie błędu, odwiedź stronę <a href='https://github.com/4c65736975/manualRefueling'>GitHub</a>.
-]]>
-</pl>
-	</description>
+Aby uzyskać więcej informacji, pełny dziennik zmian, pomoc lub zgłoszenie błędu, odwiedź <a href="https://github.com/4c65736975/manualRefueling">GitHub</a>.]]></pl>
+  </description>
+  <iconFilename>icon_manualRefueling.png</iconFilename>
+  <multiplayer supported="true"/>
 
-	<extraSourceFiles>
-		<sourceFile filename='src/ManualRefueling.lua'/>
-	</extraSourceFiles>
+  <extraSourceFiles>
+    <sourceFile filename="src/main.lua"/>
+  </extraSourceFiles>
 </modDesc>
