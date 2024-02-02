@@ -176,7 +176,11 @@ local function getAllowsActivation(self, superFunc, fillableObject)
   end
 
   if self.isManual then
-    return getCanAccessObject(fillableObject)
+    if self.isPlayerInTrigger then
+      return getCanAccessObject(fillableObject)
+    end
+
+    return false
   end
 
   return superFunc(self, fillableObject)
@@ -305,6 +309,7 @@ local function getIsActivatable(self, superFunc, vehicle)
       local nearestDistance = math.huge
 
       for _, vehicle in pairs(self.vehiclesInTrigger) do
+        -- we check whether the entity exists in case some e.g. pallet sneaked into vehiclesInTrigger
         if entityExists(vehicle.object.rootNode) then
           vehicle.distance = calcDistanceFrom(vehicle.object.rootNode, g_currentMission.player.rootNode)
 
