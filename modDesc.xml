@@ -19,7 +19,7 @@ Changelog (1.0.0.3):
 - new game screenshots
 - updated descVersion
 
-For more information, full changelog, help, and report issues please visit <a href="https://github.com/4c65736975/manualRefueling">GitHub</a>.]]></en>
+For more information, full changelog, help, and report issues please visit <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></en>
     <de><![CDATA[Dank dieser Modifikation können Sie Ihre Maschine manuell betanken, während Sie sich im Freien und in der Nähe befinden.
 Außerdem wird der ursprüngliche Fehler behoben, bei dem der Nachfüllvorgang auch dann noch angezeigt wird, wenn Ihr Quelltank leer ist oder die Maschine/das Fahrzeug, die/das Sie befüllen, voll ist.
 
@@ -30,7 +30,7 @@ Außerdem wird der ursprüngliche Fehler behoben, bei dem der Nachfüllvorgang a
 - Neue Spiel-Screenshots
 - descVersion aktualisiert
 
-Weitere Informationen, ein vollständiges Änderungsprotokoll, Hilfe oder einen Fehlerbericht finden Sie auf <a href="https://github.com/4c65736975/manualRefueling">GitHub</a>.]]></de>
+Weitere Informationen, ein vollständiges Änderungsprotokoll, Hilfe oder einen Fehlerbericht finden Sie auf <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></de>
     <fr><![CDATA[Grâce à cette modification, vous pourrez faire le plein manuellement de votre machine tout en étant à l'extérieur et à proximité de celle-ci.
 Il supprime également le bug d'origine lorsque l'action de remplissage est toujours affichée même lorsque votre réservoir source est vide ou que la machine/le véhicule que vous remplissez est complètement chargé.
 
@@ -41,7 +41,7 @@ Journal des modifications (1.0.0.3):
 - de nouvelles captures d'écran du jeu
 - descVersion mise à jour
 
-Pour plus d'informations, un journal des modifications complet, de l'aide ou un rapport de bug, veuillez visiter <a href="https://github.com/4c65736975/manualRefueling">GitHub</a>.]]></fr>
+Pour plus d'informations, un journal des modifications complet, de l'aide ou un rapport de bug, veuillez visiter <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></fr>
     <pl><![CDATA[Dzięki tej modyfikacji możesz ręcznie zatankować swoją maszynę będąc na zewnątrz i w jej pobliżu.
 Usuwa również oryginalny błąd, gdy akcja uzupełniania jest nadal pokazywana, nawet jeśli zbiornik źródłowy jest pusty lub napełniana maszyna/pojazd jest w pełni napełniona.
 
@@ -52,7 +52,7 @@ Dziennik zmian (1.0.0.3):
 - nowe zrzuty ekranu z gry
 - zaktualizowano descVersion
 
-Aby uzyskać więcej informacji, pełny dziennik zmian, pomoc lub zgłoszenie błędu, odwiedź <a href="https://github.com/4c65736975/manualRefueling">GitHub</a>.]]></pl>
+Aby uzyskać więcej informacji, pełny dziennik zmian, pomoc lub zgłoszenie błędu, odwiedź <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></pl>
   </description>
   <iconFilename>icon_manualRefueling.png</iconFilename>
   <multiplayer supported="true"/>
