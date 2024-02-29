@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0.4
+
+Fix:
+
+- fixed problem with filling from objects on dedicated servers
+
 ## 1.0.0.3
 
 Features:

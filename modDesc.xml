@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="79">
   <author>VertexFloat</author>
-  <version>1.0.0.3</version>
+  <version>1.0.0.4</version>
   <title>
     <en>Manual Refueling</en>
     <de>Manuelle Betankung</de>
@@ -12,45 +12,29 @@
     <en><![CDATA[Thanks to this modification, you can manually refuel your machine while being outdoors and close to it.
 It also remove original bug when refill action is still showing even when your source tank is empty or machine/vehicle you filling is fully filled.
 
-Changelog (1.0.0.3):
-- added support for manual refueling from objects such as barrels and pallets
-- added DEF fill type support
-- optimized and cleaned code
-- new game screenshots
-- updated descVersion
+Changelog (1.0.0.4):
+- fixed problem with filling from objects on dedicated servers
 
-For more information, full changelog, help, and report issues please visit <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></en>
+For more information, full changelog, help or to report issues, please visit <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></en>
     <de><![CDATA[Dank dieser Modifikation können Sie Ihre Maschine manuell betanken, während Sie sich im Freien und in der Nähe befinden.
 Außerdem wird der ursprüngliche Fehler behoben, bei dem der Nachfüllvorgang auch dann noch angezeigt wird, wenn Ihr Quelltank leer ist oder die Maschine/das Fahrzeug, die/das Sie befüllen, voll ist.
 
-Änderungsprotokoll (1.0.0.3):
-- Unterstützung für manuelles Auftanken aus Objekten wie Fässern und Paletten hinzugefügt
-- Unterstützung für den DEF-Fülltyp hinzugefügt
-- optimierter und bereinigter Code
-- Neue Spiel-Screenshots
-- descVersion aktualisiert
+Änderungsprotokoll (1.0.0.4):
+- Problem beim Füllen von Objekten auf dedizierten Servern behoben
 
-Weitere Informationen, ein vollständiges Änderungsprotokoll, Hilfe oder einen Fehlerbericht finden Sie auf <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></de>
+Weitere Informationen, ein vollständiges Änderungsprotokoll, Hilfe oder die Möglichkeit, Probleme zu melden, finden Sie unter <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></de>
     <fr><![CDATA[Grâce à cette modification, vous pourrez faire le plein manuellement de votre machine tout en étant à l'extérieur et à proximité de celle-ci.
 Il supprime également le bug d'origine lorsque l'action de remplissage est toujours affichée même lorsque votre réservoir source est vide ou que la machine/le véhicule que vous remplissez est complètement chargé.
 
-Journal des modifications (1.0.0.3):
-- prise en charge supplémentaire du ravitaillement manuel à partir d'objets tels que des barils et des palettes
-- ajout de la prise en charge du type de remplissage DEF
-- code optimisé et nettoyé
-- de nouvelles captures d'écran du jeu
-- descVersion mise à jour
+Journal des modifications (1.0.0.4):
+- Correction d'un problème de remplissage à partir d'objets sur des serveurs dédiés
 
-Pour plus d'informations, un journal des modifications complet, de l'aide ou un rapport de bug, veuillez visiter <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></fr>
+Pour plus d'informations, le journal des modifications complet, de l'aide ou pour signaler des problèmes, veuillez visiter <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></fr>
     <pl><![CDATA[Dzięki tej modyfikacji możesz ręcznie zatankować swoją maszynę będąc na zewnątrz i w jej pobliżu.
 Usuwa również oryginalny błąd, gdy akcja uzupełniania jest nadal pokazywana, nawet jeśli zbiornik źródłowy jest pusty lub napełniana maszyna/pojazd jest w pełni napełniona.
 
-Dziennik zmian (1.0.0.3):
-- dodano obsługę ręcznego tankowania z obiektów takich jak beczki i palety
-- dodano obsługę typu wypełnienia DEF
-- zoptymalizowany i oczyszczony kod
-- nowe zrzuty ekranu z gry
-- zaktualizowano descVersion
+Dziennik zmian (1.0.0.4):
+- naprawiono problem z napełnianiem z obiektów na serwerach dedykowanych
 
 Aby uzyskać więcej informacji, pełny dziennik zmian, pomoc lub zgłoszenie błędu, odwiedź <a href="https://github.com/VertexFloat/manualRefueling">GitHub</a>.]]></pl>
   </description>
