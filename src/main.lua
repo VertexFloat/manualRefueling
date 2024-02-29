@@ -1,5 +1,5 @@
 -- @author: 4c65736975, All Rights Reserved
--- @version: 1.0.0.3, 29|01|2024
+-- @version: 1.0.0.4, 29|02|2024
 -- @filename: main.lua
 
 -- Changelog (1.0.0.1):
@@ -15,6 +15,9 @@
 -- optimized and cleaned code
 -- added support for manual refueling from objects such as barrels and pallets
 -- added DEF fill type support
+
+-- Changelog (1.0.0.4):
+-- fixed problem with filling from objects on dedicated servers
 
 MOD_DIRECTORY = g_currentModDirectory
 SOUNDS_CONFIG_XML_PATH = MOD_DIRECTORY .. "data/sounds/sounds.xml"
@@ -300,18 +303,6 @@ end
 
 FillTrigger.fillTriggerCallback = Utils.appendedFunction(FillTrigger.fillTriggerCallback, fillTriggerCallback)
 
-local function getIsActivatable(self, superFunc, vehicle)
-  local ret = superFunc(self, vehicle)
-
-  if ret then
-    return getCanAccessObject(vehicle)
-  end
-
-  return ret
-end
-
-FillTrigger.getIsActivatable = Utils.overwrittenFunction(FillTrigger.getIsActivatable, getIsActivatable)
-
 local function setFillSoundIsPlaying(self, superFunc, state)
   if self.isManual and self.samples ~= nil and self.samples.start ~= nil then
     if state then
@@ -354,7 +345,7 @@ local function getIsActivatable(self, superFunc)
 
       for _, trigger in ipairs(spec.fillTrigger.triggers) do
         if trigger.isManual then
-          if trigger.isPlayerInTrigger and trigger:getIsActivatable(self.vehicle) then
+          if trigger.isPlayerInTrigger and trigger:getIsActivatable(self.vehicle) and getCanAccessObject(self.vehicle) then
             if next(trigger.vehiclesInTrigger) == nil then
               return false
             end
